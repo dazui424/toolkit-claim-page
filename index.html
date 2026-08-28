@@ -7,6 +7,7 @@
   <meta name="description" content="扫描企业微信二维码领取工具包">
   <title>领取工具包</title>
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="wecom-qr.webp" as="image" type="image/webp">
   <style>
     :root {
       --accent: #2378e8;
@@ -72,8 +73,15 @@
       width: 84px;
       height: 84px;
       flex: 0 0 84px;
+      display: grid;
+      place-items: center;
       border-radius: 12px;
-      object-fit: cover;
+      background: linear-gradient(145deg, #1468dc, #53a8ff);
+      box-shadow: inset 0 0 0 1px rgb(255 255 255 / 20%);
+      color: #fff;
+      font-size: 17px;
+      font-weight: 700;
+      letter-spacing: .05em;
     }
 
     .summary h2 {
@@ -183,7 +191,7 @@
     </header>
 
     <section class="summary" aria-label="工具包信息">
-      <img class="cover" src="course-cover.png" alt="工具包封面" width="84" height="84">
+      <div class="cover" aria-hidden="true">工具包</div>
       <div>
         <h2>你的专属工具包</h2>
         <p class="status"><span class="check" aria-hidden="true">✓</span>扫码即可领取</p>
@@ -194,7 +202,7 @@
 
     <section aria-label="工具包领取二维码">
       <div class="qr-wrap">
-        <img class="qr" src="wecom-qr.jpg" alt="添加企业微信的二维码">
+        <img class="qr" src="wecom-qr.webp" alt="添加企业微信的二维码" width="720" height="720" fetchpriority="high" decoding="async">
       </div>
     </section>
 
